@@ -1,0 +1,26 @@
+{
+  "name": "lodash-api-description",
+  "nicename": "Lodash API Description",
+  "version": "0.0.1",
+  "description": "API Description mixins for Lodash",
+  "main": "./lib",
+  "scripts": {
+    "lint": "eslint lib --ext .js",
+    "test": "mocha -R spec --recursive",
+    "develop": "nodemon --exec \"npm test\"",
+    "ci": "npm run lint && npm test",
+    "prepublish": "npm run ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:apiaryio/afn.git"
+  },
+  "author": "Apiary Inc. <support@apiary.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "",
+    "eslint": "^1.9.0",
+    "mocha": "",
+    "lodash": "^3.10.1"
+  }
+}
