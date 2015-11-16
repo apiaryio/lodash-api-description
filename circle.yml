@@ -17,9 +17,9 @@ test:
     - case $CIRCLE_NODE_INDEX in 0) sh ./scripts/runCircleCiTestsInContainer0.sh ;; 1) sh ./scripts/runCircleCiTestsInContainer1.sh ;; 2) sh ./scripts/runCircleCiTestsInContainer2.sh ;; esac:
         parallel: true
   post:
-    - case $CIRCLE_NODE_INDEX in 0) nvm use 0.10.40 && npm run build ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) nvm use 0.10.40 && npm run test ;; esac:
         parallel: true
-    - case $CIRCLE_NODE_INDEX in 1) nvm use 4.2.2 && npm run build ;; esac:
+    - case $CIRCLE_NODE_INDEX in 1) nvm use 4.2.2 && npm run test ;; esac:
         parallel: true
-    - case $CIRCLE_NODE_INDEX in 2) nvm use 5.0.0 && npm run build ;; esac:
+    - case $CIRCLE_NODE_INDEX in 2) nvm use 5.0.0 && npm run test ;; esac:
         parallel: true
