@@ -9,7 +9,7 @@
     "lint": "eslint lib --ext .js",
     "pretest": "npm run lint",
     "test": "npm run nodejstests",
-    "develop": "nodemon --exec \"npm nodejstests\"",
+    "develop": "nodemon --exec \"npm run nodejstests\"",
     "prepublish": "npm run test"
   },
   "repository": {
