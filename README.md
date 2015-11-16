@@ -8,20 +8,6 @@ This library takes a `lodash` instance and adds API Description mixins, which ar
 
 It is recommended to use these functions and other Lodash functions when interacting with Refract because you get some safety when chaining and looking for data.
 
-### Installing
-
-```sh
-npm install lodash-api-description --save
-```
-
-### Requiring and Using Mixins
-
-```js
-import lodash from 'lodash';
-import apiDescription from 'lodash-api-description';
-apiDescription(lodash);
-```
-
 ### content
 
 Takes a Refract element and returns its content, which MAY be of any JavaScript type.
@@ -198,10 +184,44 @@ _.messageBodySchemas({
 });
 ```
 
+### filterContent
+
+Takes a Refract element and filter condition, gets its content, and filters it.
+
+```js
+// Returns array including the one messageBodySchema element in content
+_.filterContent({
+  element: 'httpRequest',
+  content: [
+    {
+      element: 'asset',
+      meta: {
+        classes: ['messageBodySchema']
+      }
+      content: 'Body Schema here'
+    },
+    {
+      element: 'copy',
+      content: 'Copy text here.'
+    }
+  ]
+}, {element: 'asset'});
+```
+
 ## Installation
 
 ```shell
-$ npm install afn
+npm install lodash-api-description --save
+```
+
+## Using the library
+
+To use these functions, you will need to pass in `lodash`, which will add the functions as mixins.
+
+```js
+import lodash from 'lodash';
+import apiDescription from 'lodash-api-description';
+apiDescription(lodash);
 ```
 
 ## Development

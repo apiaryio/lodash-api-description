@@ -5,11 +5,12 @@
   "description": "API Description mixins for Lodash",
   "main": "./lib",
   "scripts": {
+    "nodejstests": "mocha -R spec --recursive",
     "lint": "eslint lib --ext .js",
-    "test": "mocha -R spec --recursive",
-    "develop": "nodemon --exec \"npm test\"",
-    "ci": "npm run lint && npm test",
-    "prepublish": "npm run ci"
+    "pretest": "npm run lint",
+    "test": "npm run nodejstests",
+    "develop": "nodemon --exec \"npm nodejstests\"",
+    "prepublish": "npm run test"
   },
   "repository": {
     "type": "git",
