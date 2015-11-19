@@ -1,6 +1,6 @@
 # API Description Utilities
 
-API Description mixins for Lodash
+API Description mixins for Lodash based on the [Refract API Description namespace](https://github.com/refractproject/refract-spec/blob/master/namespaces/api-description-namespace.md)
 
 ## Usage
 
@@ -216,13 +216,25 @@ npm install lodash-api-description --save
 
 ## Using the library
 
-To use these functions, you will need to pass in `lodash`, which will add the functions as mixins.
+If you are using this library in a project of yours, we recommend loading Lodash in its own module, using `runInContext`, and adding mixins. Your module would look like:
 
 ```js
-import lodash from 'lodash';
-import apiDescription from 'lodash-api-description';
-apiDescription(lodash);
+// utils.js
+var lodash = require('lodash').runInContext(); // creates a copy of lodash
+var apiDescriptionMixins = require('lodash-api-description');
+apiDescriptionMixins(lodash); // adds API Description mixins
+
+module.exports = lodash;
 ```
+
+Then when using this functionality in your project, you can do the following:
+
+```js
+// Requiring custom lodash from another file
+var lodash = require('./utils.js');
+```
+
+This prevents you from adding mixins to Lodash for entire project.
 
 ## Development
 
