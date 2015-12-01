@@ -65,7 +65,7 @@ Takes a Refract element and returns an array of all `transition` elements found 
 
 ```js
 // Returns array including the one transition element in content
-_.resourceGroups({
+_.transitions({
   element: 'resource',
   content: [
     {
