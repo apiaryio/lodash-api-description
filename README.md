@@ -25,6 +25,28 @@ _.content({
 });
 ```
 
+### contentOrValue
+
+Takes any value and checks if it is Refract element.
+If it is Refract element then returns its content, which MAY be of any JavaScript type.
+Otherwise returns value itself.
+
+```js
+// Returns passed value
+_.contentOrValue('primitive value');
+
+// Returns array with the resource element
+_.contentOrValue({
+  element: 'category',
+  content: [
+    {
+      element: 'resource',
+      content: []
+    }
+  ]
+});
+```
+
 ### dataStructures
 
 Takes a Refract element and returns an array of all `dataStructure` elements found in the content.
