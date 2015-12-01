@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:apiaryio/afn.git"
+    "url": "git+https://github.com/apiaryio/lodash-api-description.git"
   },
   "author": "Apiary Inc. <support@apiary.io>",
   "license": "MIT",
